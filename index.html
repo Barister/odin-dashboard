@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="css/icons_font.css">
+   <link rel="stylesheet" href="css/style.css">
+   <title>The Odin Dashboard</title>
+</head>
+
+<body>
+   <header class="header">
+      <div class="header__menu">
+         <ul class="header__list">
+            <li class="header__item">
+               <i class="fa-regular fa-bell"></i>
+               <span>Notifications</span>
+            </li>
+            <li class="header__item">
+               <i class="fa-regular fa-life-ring"></i>
+               <span>Help</span>
+            </li>
+         </ul>
+      </div>
+      <div class="header__search">
+         <label for="header__search" class="">
+            <i class="fa-solid fa-magnifying-glass fa-xs"></i>
+            <input id="header__search" type="search" placeholder="Type a property, name, or contact channel"></label>
+      </div>
+      <div class="header__account">
+
+         <i class="fa-regular fa-user"></i>
+         <span>Eugenita</span>
+         <i class="fa-solid fa-chevron-down"></i>
+      </div>
+   </header>
+   <aside class="aside">
+      <div class="aside__logo">
+         <a href="https://opsa-karelia.ru">
+            <p>Opsa.Karelia</p>
+         </a>
+         <ul class="aside__menu">
+            <li class="aside__item"><i class="fa-solid fa-table-columns"></i><span>Dashboard</span></li>
+            <li class="aside__item"><i class="fa-regular fa-sun"></i><span>My day</span></li>
+            <li class="aside__item"><i class="fa-regular fa-calendar-days"></i><span>Calendar</span></li>
+            <li class="aside__item"><i class="fa-solid fa-house-chimney"></i><span>Properties</span></li>
+            <li class="aside__item"><i class="fa-solid fa-wrench"></i><span>Maintenance</span></li>
+            <li class="aside__item"><i class="fa-solid fa-users"></i><span>Guests</span></li>
+            <li class="aside__item"><i class="fa-regular fa-comments"></i><span>Conversations</span></li>
+            <li class="aside__item"><i class="fa-solid fa-file-invoice-dollar"></i><span>Billing</span></li>
+            <li class="aside__item"><i class="fa-solid fa-book-open"></i><span>Blog</span></li>
+
+         </ul>
+      </div>
+   </aside>
+   <main class="main">
+      <div class="main__greetings">Hello, Eugenita<i class="fa-regular fa-sun"></i></div>
+      <div class="main__grid">
+         <div class="main__summary">
+            <div class="main__card summary__card">
+               <div class="card__info">
+                  <div class="card__number">2</div>
+                  <div class="card__title">Check Ins Today</div>
+               </div>
+               <div class="card__icon">
+                  <i class="fa-solid fa-person-walking-dashed-line-arrow-right fa-flip-horizontal"></i>
+               </div>
+               <div class="main__card summary__card">
+                  <div class="card__info">
+                     <div class="card__number">3</div>
+                     <div class="card__title">Check Outs Today</div>
+                  </div>
+                  <div class="card__icon">
+                     <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>
+                  </div>
+               </div>
+               <div class="main__card summary__card">
+                  <div class="card__info">
+                     <div class="card__number">4</div>
+                     <div class="card__title">Occupied Units</div>
+                  </div>
+                  <div class="card__icon">
+                     <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="main__card overwiew"></div>
+            <div class="main__card"></div>
+            <div class="main__card"></div>
+            <div class="main__card"></div>
+            <div class="main__card"></div>
+            <div class="main__card"></div>
+            <div class="main__card card-maintenance">
+               <div class="card__header">
+                  <div class="card__title">Open Maintenance Requests</div>
+                  <option class="card__option" value="July 2023"></option>
+               </div>
+               <div class="card__table">
+                  <table class="table-header">
+                     <thead>
+                        <tr>
+                           <th class="header__item">Property</th>
+                           <th class="header__item">Category:Subject</th>
+                           <th class="header__item">Priority</th>
+                           <th class="header__item">Action</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>
+                              <i class="fa-regular fa-user"></i>
+                              <span>House 1</span>
+                           </td>
+                           <td>
+                              Plumbing - Leaking Faucet
+                           </td>
+                           <td>
+                              <span class="priority-card low">Low</span>
+                           </td>
+                           <td>
+                              <a class="action-details">Details</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <i class="fa-regular fa-user"></i>
+                              <span>House 3</span>
+                           </td>
+                           <td>
+                              Window - cracked window
+                           </td>
+                           <td>
+                              <span class="priority-card medium">Medium</span>
+                           </td>
+                           <td>
+                              <a class="action-details">Details</a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="main__card card__weather">
+               <div class="card__header">
+                  <div class="card__title">Weather Report</div>
+                  <option class="card__option" value="Today"></option>
+               </div>
+               <div class="card__main">
+                  <i class=""></i><span class="weather__temperatue"></span>
+                  <div class="weather__data">
+                     <div class="weekday">Saturday</div>
+                     <div class="weather-place">Olonets</div>
+                  </div>
+               </div>
+               <div class="card__data">
+                  <p>
+                     <span class="subject">Wind</span>
+                     <span class="data__data">WNW 17 kmh</span>
+                  </p>
+                  <p>
+                     <span class="subject">Humidity</span>
+                     <span class="data__data">67%</span>
+                  </p>
+               </div>
+            </div>
+         </div>
+   </main>
+
+   <script src="js/script.js"></script>
+</body>
+
+</html>
