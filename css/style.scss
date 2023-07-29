@@ -8,5 +8,142 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
+   list-style: none;
 }
 
+html {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 62.5%;
+}
+
+button, input {
+   font-family: inherit;
+   font-size: 100%;
+   appearance: none;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+body {
+   height: 100vh;
+   width: 100%;
+   background-color: #f5f7fd;
+   font-size: 1.6rem;
+
+   color: #a4adc8;
+   display: grid;
+   grid-template-columns: 175px 6fr;
+   grid-template-rows: minmax(min-content, 40px) 1fr;
+   grid-template-areas: 
+      "header header"
+      "aside main";
+}
+
+aside {
+   grid-area: aside;
+   padding: 10px 20px 10px 20px;
+}
+
+main {
+   grid-area: main;
+
+}
+
+.header {
+   grid-area: header;
+   background-color: #fff;
+   display: grid;
+   grid-template-columns: 175px 4fr minmax(120px, 1fr);
+   align-items: center;
+   padding: 10px 0;
+   &__menu {
+      padding: 0 20px;
+      align-self: center;
+   }
+
+   &__list {
+      display: flex;
+      gap: 20px;
+   }
+
+   &__item {
+   }
+
+   &__search {
+      justify-self: start;
+      width: 100%;
+      // display: flex;
+      & label {
+         width: 100%;
+      }
+      & input {
+         width: 90%;
+         border: none;
+         color: #a4adc8;
+         font-size: 1.4rem;
+         &::placeholder {
+            color: #a4adc8;
+            
+         }
+         &:active, &:focus, &:focus-visible {
+            outline: none;
+            border: none;
+         }
+      }
+   }
+
+   &__account {
+      font-size: 1.4rem;
+      justify-self: end;
+      padding: 0 20px 0 0;
+   }
+}
+
+.burger-menu {
+   width: 18px;
+   height: 14px; 
+   cursor: pointer; 
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   position: relative;
+   top: 1px;
+}
+
+.bar {
+   width: 100%;
+   height: 2px; /* Высота полоски меню бургер */
+   background-color: #a4adc8; /* Цвет полоски меню бургер */
+   border-radius: 2px; /* Делаем закругленные уголки у полосок */
+ }
+ 
+ /* Добавляем анимацию на полоски меню бургер при клике */
+ .burger-menu.active .bar:nth-child(1) {
+   transform: translateY(8px) rotate(45deg);
+ }
+ 
+ .burger-menu.active .bar:nth-child(2) {
+   opacity: 0;
+ }
+ 
+ .burger-menu.active .bar:nth-child(3) {
+   transform: translateY(-8px) rotate(-45deg);
+ }
+
+.aside {
+
+   &__logo {
+   }
+
+   &__menu {
+   }
+
+   &__item {
+   }
+
+   &__support {
+   }
+}
