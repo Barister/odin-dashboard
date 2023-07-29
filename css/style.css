@@ -40,12 +40,9 @@ body {
   grid-template-areas: "header header" "aside main";
 }
 
-main {
-  grid-area: main;
-  padding: 20px;
-}
-
 .header {
+  position: fixed;
+  width: 100%;
   grid-area: header;
   background-color: #fff;
   display: grid;
@@ -60,6 +57,26 @@ main {
 .header__list {
   display: flex;
   gap: 20px;
+}
+.header__item i {
+  position: relative;
+}
+.header__item i::after {
+  content: "";
+  background-color: #d83d3a;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  z-index: 1;
+}
+.header__list li:nth-of-type(3) i::after {
+  right: -4px;
+}
+.header__list li:nth-of-type(4) i::after {
+  right: -2px;
 }
 .header__search {
   justify-self: start;
@@ -120,12 +137,13 @@ main {
 }
 
 .aside {
+  position: fixed;
+  height: 100vh;
   grid-area: aside;
-  padding: 20px;
+  padding: 58px 20px 20px 20px;
   display: grid;
   gap: 40px;
   grid-template-rows: min-content 1fr min-content;
-  position: relative;
 }
 .aside__logo {
   width: 100%;
@@ -139,7 +157,7 @@ main {
   height: 100px;
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 38px;
   left: 0;
   content: "";
 }
@@ -175,4 +193,14 @@ main {
 .aside__item a {
   display: grid;
   grid-template-columns: 30px 1fr;
+}
+.main {
+  grid-area: main;
+  padding: 58px 20px 20px 20px;
+}
+.main__grid {
+  display: grid;
+}
+.main__card {
+  border: 1px solid #00abda;
 }

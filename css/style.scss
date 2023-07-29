@@ -42,12 +42,11 @@ body {
       "aside main";
 }
 
-main {
-   grid-area: main;
-   padding: 20px;
-}
+
 
 .header {
+   position: fixed;
+   width: 100%;
    grid-area: header;
    background-color: #fff;
    display: grid;
@@ -64,8 +63,29 @@ main {
       gap: 20px;
    }
 
-   &__item {
+   &__item i{
+      position: relative;
+      &::after {
+         content: "";
+         background-color: #d83d3a;
+         height: 5px;
+         width: 5px;
+         border-radius: 50%;
+         position: absolute;
+         top: -4px;
+         right: -6px;
+         z-index: 1;
+      }
+      
    }
+
+   &__list li:nth-of-type(3) i::after {
+      right: -4px;
+   } 
+
+   &__list li:nth-of-type(4) i::after {
+      right: -2px;
+   } 
 
    &__search {
       justify-self: start;
@@ -132,12 +152,14 @@ main {
  }
 
 .aside {
+   position: fixed;
+   height: 100vh;
    grid-area: aside;
-   padding: 20px;
+   padding: 58px 20px 20px 20px;
    display: grid;
    gap: 40px;
    grid-template-rows: min-content 1fr min-content;
-   position: relative;
+   //position: relative;
    &__logo {
       width: 100%;
       //padding: 20px 0px 20px 0px;
@@ -151,7 +173,7 @@ main {
          height: 100px;
          width: 100%;
          position: absolute;
-         top: 0;
+         top: 38px;
          left: 0;
          content: '';
       }
@@ -205,5 +227,152 @@ main {
    
 
    &__support {
+   }
+}
+
+
+.main {
+   grid-area: main;
+   padding: 58px 20px 20px 20px;
+   &__greetings {
+   }
+
+   &__grid {
+      display: grid;
+   }
+
+   &__summary {
+   }
+
+   &__card {
+      border: 1px solid #00abda;
+   }
+}
+.fa-regular {
+}
+.fa-sun {
+}
+.summary {
+
+   &__card {
+   }
+}
+.card {
+
+   &__info {
+   }
+
+   &__number {
+   }
+
+   &__title {
+   }
+
+   &__icon {
+   }
+
+   &__header {
+   }
+
+   &__legend {
+   }
+
+   &__option {
+   }
+
+   &__table {
+   }
+
+   &__weather {
+   }
+
+   &__main {
+   }
+
+   &__data {
+   }
+}
+.fa-solid {
+}
+.fa-person-walking-dashed-line-arrow-right {
+}
+.fa-flip-horizontal {
+}
+.total-revenue {
+}
+.bullet-green {
+}
+.bullet-blue {
+}
+.diagram {
+
+   &__row {
+   }
+}
+.metrics {
+
+   &__item {
+   }
+
+   &__info {
+   }
+
+   &__diag {
+   }
+}
+.rents-month {
+
+   &__diag {
+   }
+
+   &__data {
+   }
+}
+.info {
+
+   &__block {
+   }
+
+   &__legend {
+   }
+}
+.monthly-rents {
+}
+.card-maintenance {
+}
+.table-header {
+}
+.header {
+
+   &__item {
+   }
+}
+.fa-user {
+}
+.priority-card {
+}
+.low {
+}
+.action-details {
+}
+.medium {
+}
+.weather {
+
+   &__temperatue {
+   }
+
+   &__data {
+   }
+}
+.weekday {
+}
+.weather-place {
+}
+.subject {
+}
+.data {
+
+   &__data {
    }
 }
