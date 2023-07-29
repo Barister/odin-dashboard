@@ -42,14 +42,9 @@ body {
       "aside main";
 }
 
-aside {
-   grid-area: aside;
-   padding: 10px 20px 10px 20px;
-}
-
 main {
    grid-area: main;
-
+   padding: 20px;
 }
 
 .header {
@@ -75,7 +70,7 @@ main {
    &__search {
       justify-self: start;
       width: 100%;
-      // display: flex;
+      padding-left: 20px;
       & label {
          width: 100%;
       }
@@ -118,31 +113,96 @@ main {
    height: 2px; /* Высота полоски меню бургер */
    background-color: #a4adc8; /* Цвет полоски меню бургер */
    border-radius: 2px; /* Делаем закругленные уголки у полосок */
+   transition: transform 0.3s ease;
  }
  
  /* Добавляем анимацию на полоски меню бургер при клике */
  .burger-menu.active .bar:nth-child(1) {
-   transform: translateY(8px) rotate(45deg);
+   width: 70%;
+   //transform: translateY(8px) rotate(45deg);
  }
  
  .burger-menu.active .bar:nth-child(2) {
-   opacity: 0;
+   // opacity: 0;
  }
  
  .burger-menu.active .bar:nth-child(3) {
-   transform: translateY(-8px) rotate(-45deg);
+   width: 70%;
+   //transform: translateY(-8px) rotate(-45deg);
  }
 
 .aside {
-
+   grid-area: aside;
+   padding: 20px;
+   display: grid;
+   gap: 40px;
+   grid-template-rows: min-content 1fr min-content;
+   position: relative;
    &__logo {
+      width: 100%;
+      //padding: 20px 0px 20px 0px;
+      font-family: 'Norse Bold', sans-serif;
+      text-align: center;
+      //position: relative;
+      &::after {
+         padding: 0;
+         background-color: rgb(1, 1, 1);
+         opacity: 0.5;
+         height: 100px;
+         width: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         content: '';
+      }
+      & a {
+         text-decoration: none;
+      }
+      & span {
+         position: relative;
+         z-index: 1;
+         display: block;
+         color: #fff;
+         font-size: min(2.6rem, 4rem);
+         width: fit-content;
+         margin: 0 auto;
+         letter-spacing: 3px;
+         &:nth-of-type(2){
+            width: fit-content;
+            border-top: 2px solid #fff;
+         }
+      }
    }
 
    &__menu {
+      display: grid;
+      grid-template-rows: repeat(auto-fill, 20px);
+      // justify-content: start;
+      // gap: 20px;
+      // position: relative;
+   }
+   &__item.active, &__item:hover, &__support:hover {
+      color: #0f1b41;
+      & i::before {
+         color: #00abda;
+      }
+   }
+   &__item a{
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      // position: relative
+      & i {
+
+         // position: absolute;
+      }
+      & span{
+         // position: absolute;
+         // margin-left: 20px;
+      
+   }
    }
 
-   &__item {
-   }
+   
 
    &__support {
    }
