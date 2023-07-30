@@ -117,6 +117,7 @@ body {
   justify-content: space-between;
   position: relative;
   top: 1px;
+  z-index: 999;
 }
 
 .bar {
@@ -138,9 +139,10 @@ body {
 
 .aside {
   position: fixed;
-  height: 100vh;
+  height: calc(100vh - 38px);
   grid-area: aside;
-  padding: 58px 20px 20px 20px;
+  margin: 38px 0px 0px 0px;
+  padding: 20px 20px 20px 20px;
   display: grid;
   gap: 40px;
   grid-template-rows: min-content 1fr min-content;
@@ -157,7 +159,7 @@ body {
   height: 100px;
   width: 100%;
   position: absolute;
-  top: 38px;
+  top: 0px;
   left: 0;
   content: "";
 }
@@ -196,11 +198,86 @@ body {
 }
 .main {
   grid-area: main;
-  padding: 58px 20px 20px 20px;
+  padding: 20px;
+  height: calc(100vh - 38px);
+  width: min(1200px, 100%);
+}
+.main__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.main__title {
+  color: #000;
+  margin: 0px 0px 20px 0px;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+.main__greetings {
+  margin: 0px 0px 20px 0px;
+}
+.main__greetings span {
+  margin: 0px 10px 0px 0px;
 }
 .main__grid {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(10%, 1fr));
+  gap: 10px;
+}
+.main__summary {
+  display: grid;
+  grid-column: 1/-1;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 1fr;
+  width: 100%;
+  gap: 10px;
+}
+.main__summary div:first-child .card__icon {
+  background-color: #ddddfb;
+}
+.main__summary div:first-child .card__icon i {
+  color: #5554e9;
+}
+.main__summary div:nth-child(2) .card__icon {
+  background-color: #ffeecc;
+}
+.main__summary div:nth-child(2) .card__icon i {
+  color: #ffab00;
+}
+.main__summary div:nth-child(3) .card__icon {
+  background-color: #ffe7e7;
+}
+.main__summary div:nth-child(3) .card__icon i {
+  color: #ff8886;
 }
 .main__card {
-  border: 1px solid #00abda;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 100%;
+  padding: 20px 30px;
+}
+
+.summary__card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.card__number {
+  font-size: 3.6rem;
+  color: #000;
+  font-weight: 700;
+}
+.card__icon {
+  height: 50px;
+  width: 50px;
+  justify-self: end;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__icon i {
+  font-size: 1.6rem;
 }

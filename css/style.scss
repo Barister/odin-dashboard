@@ -126,6 +126,7 @@ body {
    justify-content: space-between;
    position: relative;
    top: 1px;
+   z-index: 999;
 }
 
 .bar {
@@ -153,9 +154,10 @@ body {
 
 .aside {
    position: fixed;
-   height: 100vh;
+   height: calc(100vh - 38px);
    grid-area: aside;
-   padding: 58px 20px 20px 20px;
+   margin: 38px 0px 0px 0px;
+   padding: 20px 20px 20px 20px;
    display: grid;
    gap: 40px;
    grid-template-rows: min-content 1fr min-content;
@@ -173,7 +175,7 @@ body {
          height: 100px;
          width: 100%;
          position: absolute;
-         top: 38px;
+         top: 0px;
          left: 0;
          content: '';
       }
@@ -233,19 +235,74 @@ body {
 
 .main {
    grid-area: main;
-   padding: 58px 20px 20px 20px;
+   padding: 20px;
+   height: calc(100vh - 38px);
+   width: min(1200px, 100%);
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+   }
+   &__title {
+      color: #000;
+      margin: 0px 0px 20px 0px;
+      font-weight: 700;
+      font-size: 2.4rem;
+   }
    &__greetings {
+      margin: 0px 0px 20px 0px;
+      & span {
+         margin: 0px 10px 0px 0px;
+      }
    }
 
    &__grid {
+      
       display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+      grid-template-rows: repeat(auto-fit, minmax(10%, 1fr));
+      gap: 10px;
+      // grid-template-areas: 
+      // "summary summary"
+      // "cards cards"
+      // "cards cards"
+      // "maintenance maintenance weather";
    }
 
    &__summary {
+      //grid-area: summary;
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-rows: 1fr;
+      width: 100%;
+      gap: 10px;
+      & div:first-child .card__icon{
+         background-color: #ddddfb;
+         & i {
+            color: #5554e9;
+         }
+      }
+      & div:nth-child(2) .card__icon{
+         background-color: #ffeecc;
+         & i {
+            color: #ffab00;
+         }
+      }
+      & div:nth-child(3) .card__icon{
+         background-color: #ffe7e7;
+         & i {
+            color: #ff8886;
+         }
+      }
    }
 
    &__card {
-      border: 1px solid #00abda;
+      //border: 1px solid #00abda;
+      border-radius: 10px;
+      background-color: #fff;
+      width: 100%;
+      padding: 20px 30px;
    }
 }
 .fa-regular {
@@ -255,7 +312,12 @@ body {
 .summary {
 
    &__card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      
    }
+   
 }
 .card {
 
@@ -263,12 +325,28 @@ body {
    }
 
    &__number {
+      font-size: 3.6rem;
+      color: #000;
+      font-weight: 700;
    }
 
    &__title {
    }
 
    &__icon {
+      height: 50px;
+      width: 50px;
+      justify-self: end;
+      //border: 1px solid #000;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      & i {
+         font-size: 1.6rem;
+         
+      }
    }
 
    &__header {
