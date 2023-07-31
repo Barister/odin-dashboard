@@ -39,6 +39,9 @@ body {
   grid-template-rows: minmax(min-content, 40px) 1fr;
   grid-template-areas: "header header" "aside main";
 }
+body.active {
+  grid-template-columns: 50px 6fr;
+}
 
 .header {
   position: fixed;
@@ -144,10 +147,17 @@ body {
   margin: 38px 0px 0px 0px;
   padding: 20px 20px 20px 20px;
   display: grid;
-  gap: 40px;
   grid-template-rows: min-content 1fr min-content;
 }
+.aside.active {
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+}
+.aside.active span {
+  display: none;
+}
 .aside__logo {
+  height: 100px;
   width: 100%;
   font-family: "Norse Bold", sans-serif;
   text-align: center;
@@ -159,7 +169,7 @@ body {
   height: 100px;
   width: 100%;
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
   content: "";
 }
@@ -181,6 +191,17 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   border-top: 2px solid #fff;
+}
+.aside__logo p.aside__logoMobile {
+  display: none;
+}
+.aside__logo p.aside__logoMobile.active {
+  display: block;
+  color: #fff;
+  font-size: 2.6rem;
+  position: relative;
+  z-index: 1;
+  padding: 17px 0px 0px 0px;
 }
 .aside__menu {
   display: grid;
@@ -218,6 +239,7 @@ body {
 }
 .main__greetings span {
   margin: 0px 10px 0px 0px;
+  font-size: 1.4rem;
 }
 .main__grid {
   display: grid;
