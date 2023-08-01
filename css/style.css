@@ -15,12 +15,10 @@ html {
   font-size: 62.5%;
 }
 
-button, input {
+button, input, select {
   font-family: inherit;
   font-size: 100%;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  color: inherit;
 }
 
 a {
@@ -29,7 +27,6 @@ a {
 }
 
 body {
-  height: 100vh;
   width: 100%;
   background-color: #f5f7fd;
   font-size: 1.6rem;
@@ -220,7 +217,7 @@ body.active {
 .main {
   grid-area: main;
   padding: 20px;
-  height: calc(100vh - 38px);
+  font-size: 1.4rem;
   width: min(1200px, 100%);
 }
 .main__header {
@@ -243,7 +240,7 @@ body.active {
 }
 .main__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(10%, 1fr));
   gap: 10px;
 }
@@ -302,4 +299,100 @@ body.active {
 }
 .card__icon i {
   font-size: 1.6rem;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr 1fr;
+  grid-template-areas: "title title" "item item" "item item";
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.metrics__header {
+  grid-area: title;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 20px 0px;
+}
+.metrics__header select {
+  border: none;
+  outline: none;
+}
+.metrics__header .card__title {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.metrics__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: baseline;
+}
+.metrics__diag i {
+  position: relative;
+  z-index: 2;
+}
+.metrics div:nth-child(2) .card__icon {
+  background-color: #5234ef;
+  position: relative;
+  background-image: linear-gradient(180deg, transparent 50%, #ccc 50%), linear-gradient(90deg, #ccc 50%, transparent 50%);
+}
+.metrics div:nth-child(2) .card__icon::after {
+  content: "";
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background: white;
+  z-index: 1;
+  border-radius: 50%;
+  left: 2px;
+  top: 2px;
+}
+.metrics div:nth-child(3) .card__icon {
+  background-color: #f4012b;
+  position: relative;
+  background-image: linear-gradient(220deg, transparent 50%, #ccc 50%), linear-gradient(130deg, #ccc 50%, transparent 50%);
+}
+.metrics div:nth-child(3) .card__icon::after {
+  content: "";
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background: white;
+  z-index: 1;
+  border-radius: 50%;
+  left: 2px;
+  top: 2px;
+}
+.metrics div:nth-child(4) .card__icon {
+  background-color: #ffae09;
+  position: relative;
+  background-image: linear-gradient(245deg, transparent 50%, #ccc 50%), linear-gradient(90deg, #ccc 50%, transparent 50%);
+}
+.metrics div:nth-child(4) .card__icon::after {
+  content: "";
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background: white;
+  z-index: 1;
+  border-radius: 50%;
+  left: 2px;
+  top: 2px;
+}
+.metrics div:nth-child(5) .card__icon {
+  background-color: #0087fb;
+  position: relative;
+  background-image: linear-gradient(180deg, transparent 50%, #ccc 50%), linear-gradient(90deg, #ccc 50%, transparent 50%);
+}
+.metrics div:nth-child(5) .card__icon::after {
+  content: "";
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background: white;
+  z-index: 1;
+  border-radius: 50%;
+  left: 2px;
+  top: 2px;
 }

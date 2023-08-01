@@ -16,10 +16,11 @@ html {
    font-size: 62.5%;
 }
 
-button, input {
+button, input, select {
    font-family: inherit;
    font-size: 100%;
-   appearance: none;
+   //appearance: none;
+   color: inherit;
 }
 
 a {
@@ -28,11 +29,10 @@ a {
 }
 
 body {
-   height: 100vh;
+   // height: 100vh;
    width: 100%;
    background-color: #f5f7fd;
    font-size: 1.6rem;
-
    color: #a4adc8;
    display: grid;
    grid-template-columns: 175px 6fr;
@@ -262,8 +262,10 @@ body {
 .main {
    grid-area: main;
    padding: 20px;
-   height: calc(100vh - 38px);
+   font-size: 1.4rem;
+   //height: calc(100vh - 38px);
    width: min(1200px, 100%);
+   
    &__header {
       display: flex;
       justify-content: space-between;
@@ -287,7 +289,7 @@ body {
    &__grid {
       
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
       grid-template-rows: repeat(auto-fit, minmax(10%, 1fr));
       gap: 10px;
       // grid-template-areas: 
@@ -416,14 +418,127 @@ body {
    }
 }
 .metrics {
-
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: min-content 1fr 1fr;
+   grid-template-areas: 
+   "title title"
+   "item item"
+   "item item";
+   column-gap: 20px;
+   &__header {
+      grid-area: title;
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 0px 20px 0px;
+      & select {
+         border: none;
+         outline: none;
+      }
+      & .card__title {
+         color: #000;
+         font-weight: 700;
+         font-size: 1.6rem;
+      }
+   }
    &__item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: baseline;
    }
 
    &__info {
    }
 
-   &__diag {
+   &__diag i {
+      //border: 3px solid #e4ebee;
+      position: relative;
+      z-index: 2;
+   }
+
+   //colors for icons
+   & div:nth-child(2) .card__icon {
+      background-color: #5234ef;
+      position: relative;
+      background-image:
+        linear-gradient(180deg, transparent 50%, #ccc 50%),
+        linear-gradient(90deg, #ccc 50%, transparent 50%);
+
+   }
+
+   & div:nth-child(2) .card__icon::after {
+      content: "";
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      background: white;
+      z-index: 1;
+      border-radius: 50%;
+      left: 2px;
+      top: 2px;
+   }
+
+   & div:nth-child(3) .card__icon {
+      background-color: #f4012b;
+      position: relative;
+      background-image:
+        linear-gradient(220deg, transparent 50%, #ccc 50%),
+        linear-gradient(130deg, #ccc 50%, transparent 50%);
+
+   }
+
+   & div:nth-child(3) .card__icon::after {
+      content: "";
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      background: white;
+      z-index: 1;
+      border-radius: 50%;
+      left: 2px;
+      top: 2px;
+   }
+
+   & div:nth-child(4) .card__icon {
+      background-color: #ffae09;
+      position: relative;
+      background-image:
+        linear-gradient(245deg, transparent 50%, #ccc 50%),
+        linear-gradient(90deg, #ccc 50%, transparent 50%);
+
+   }
+
+   & div:nth-child(4) .card__icon::after {
+      content: "";
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      background: white;
+      z-index: 1;
+      border-radius: 50%;
+      left: 2px;
+      top: 2px;
+   }
+
+   & div:nth-child(5) .card__icon {
+      background-color: #0087fb;
+      position: relative;
+      background-image:
+        linear-gradient(180deg, transparent 50%, #ccc 50%),
+        linear-gradient(90deg, #ccc 50%, transparent 50%);
+
+   }
+
+   & div:nth-child(5) .card__icon::after {
+      content: "";
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      background: white;
+      z-index: 1;
+      border-radius: 50%;
+      left: 2px;
+      top: 2px;
    }
 }
 .rents-month {
