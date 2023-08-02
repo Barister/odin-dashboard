@@ -303,6 +303,41 @@ body.active {
 .card__icon i {
   font-size: 1.6rem;
 }
+.card__header {
+  grid-area: title;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 30px 0px;
+}
+.card__header select {
+  border: none;
+  outline: none;
+}
+.card__header .card__title {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.bullet-green, .bullet-blue {
+  position: relative;
+  padding: 10px 0px 0px 20px;
+}
+
+.bullet-green::before, .bullet-blue::before {
+  position: absolute;
+  content: "";
+  height: 7px;
+  width: 7px;
+  background-color: #31c240;
+  border-radius: 50%;
+  top: 14px;
+  left: 0px;
+}
+
+.bullet-blue::before {
+  background-color: #4d2cee;
+}
+
 .metrics {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -398,4 +433,45 @@ body.active {
   border-radius: 50%;
   left: 2px;
   top: 2px;
+}
+
+.rents-month {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas: "title title" "item item";
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.rents-month__diag {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  font-size: 2.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: conic-gradient(#31c240 0deg 60deg, #ccc 60deg 310deg, #4d2cee 310deg 360deg);
+  z-index: 1;
+}
+.rents-month__diag::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: white;
+  z-index: 2;
+  border-radius: 50%;
+  left: 5px;
+  top: 5px;
+}
+.rents-month__diag i {
+  position: relative;
+  z-index: 3;
+}
+.rents-month__data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

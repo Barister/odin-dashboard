@@ -381,6 +381,19 @@ body {
    }
 
    &__header {
+      grid-area: title;
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 0px 30px 0px;
+      & select {
+         border: none;
+         outline: none;
+      }
+      & .card__title {
+         color: #000;
+         font-weight: 700;
+         font-size: 1.6rem;
+      }
    }
 
    &__legend {
@@ -401,6 +414,8 @@ body {
    &__data {
    }
 }
+
+
 .fa-solid {
 }
 .fa-person-walking-dashed-line-arrow-right {
@@ -409,9 +424,25 @@ body {
 }
 .total-revenue {
 }
-.bullet-green {
+
+
+.bullet-green, .bullet-blue {
+   position: relative;
+   padding: 10px 0px 0px 20px;
 }
-.bullet-blue {
+.bullet-green::before, .bullet-blue::before {
+   position: absolute;
+   content: "";
+   height: 7px;
+   width: 7px;
+   background-color: #31c240;
+   border-radius: 50%;
+   top: 14px;
+   left: 0px;
+}
+.bullet-blue::before {
+   background-color: #4d2cee;
+   
 }
 .diagram {
 
@@ -543,11 +574,53 @@ body {
    }
 }
 .rents-month {
-
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: min-content 1fr;
+   grid-template-areas: 
+   "title title"
+   "item item";
+   column-gap: 40px;
    &__diag {
-   }
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      font-size: 2.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background-image: conic-gradient(
+        #31c240 0deg 60deg, 
+        #ccc 60deg 310deg, 
+        #4d2cee 310deg 360deg
+      );
+    
+      // Настройка z-index для слоев
+      z-index: 1;
+    
+      &::after {
+        content: "";
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        background: white;
+        z-index: 2;
+        border-radius: 50%;
+        left: 5px;
+        top: 5px;
+      }
+    
+      & i {
+        position: relative;
+        z-index: 3;
+      }
+    }
 
    &__data {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
    }
 }
 .info {
