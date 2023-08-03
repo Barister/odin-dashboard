@@ -240,7 +240,7 @@ body.active {
   margin: 0px 0px 20px 0px;
 }
 .main__greetings span {
-  margin: 0px 10px 0px 0px;
+  margin: 0px 0px 0px 0px;
   font-size: 1.4rem;
 }
 .main__grid {
@@ -310,6 +310,7 @@ body.active {
   display: flex;
   justify-content: space-between;
   margin: 0px 0px 30px 0px;
+  align-items: start;
 }
 .card__header select {
   border: none;
@@ -319,6 +320,12 @@ body.active {
   color: #000;
   font-weight: 700;
   font-size: 1.6rem;
+}
+.card__legend ul {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  top: -10px;
 }
 .card__table table {
   width: 100%;
@@ -337,7 +344,7 @@ body.active {
   height: 1px;
   width: 100%;
   background-color: rgba(164, 173, 200, 0.5);
-  box-shadow: 1px 1px 1px rgba(89, 109, 72, 0.3);
+  box-shadow: 1px 1px 1px rgba(89, 109, 72, 0.15);
 }
 .card__table table i {
   font-size: 2rem;
@@ -546,10 +553,11 @@ body.active {
 }
 
 .action-details {
-  -webkit-text-decoration: 1.5px solid underline;
-          text-decoration: 1.5px solid underline;
+  -webkit-text-decoration: 1px solid underline;
+          text-decoration: 1px solid underline;
   text-decoration-color: rgba(85, 84, 233, 0.3);
   text-underline-offset: 2px;
+  box-shadow: 1px 1px 0 0 rgba(85, 84, 233, 0.1);
 }
 
 .medium {
@@ -560,6 +568,7 @@ body.active {
 .weather__temperature {
   font-size: 4rem;
   color: #0087fb;
+  font-family: math, sans-serif;
 }
 .weather__data {
   justify-self: center;

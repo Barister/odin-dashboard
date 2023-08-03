@@ -11,4 +11,30 @@ burger.addEventListener('click', () => {
    logoMobile.classList.toggle('active');
    body.classList.toggle('active');
 });
-console.log(asidePanel);
+//console.log(asidePanel);p
+
+
+//today date
+
+const todayBlock = document.querySelector('.greetings__weekday-time');
+
+
+function formatDate(date) {
+   const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+   };
+
+   return date.toLocaleDateString('en-US', options);
+}
+
+const today = new Date();
+const formattedDate = formatDate(today);
+console.log("Today is", formattedDate);
+
+todayBlock.textContent = formattedDate;
