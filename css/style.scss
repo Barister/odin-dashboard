@@ -56,6 +56,7 @@ body {
    grid-template-columns: 175px 4fr minmax(120px, 1fr);
    align-items: center;
    padding: 10px 0;
+   z-index: 10;
    &__menu {
       padding: 0 20px;
       align-self: center;
@@ -161,6 +162,7 @@ body {
    grid-area: aside;
    margin: 38px 0px 0px 0px;
    padding: 20px 20px 20px 20px;
+   z-index: 10;
    display: grid;
    //gap: 10px;
    grid-template-rows: min-content 1fr min-content;
@@ -403,15 +405,61 @@ body {
    }
 
    &__table {
+      & table {
+         width: 100%;
+         border-collapse: collapse;
+         border-spacing: 20px;
+         //table-layout: fixed;
+         //word-break: break-word;
+         & td, th {
+            border: 10px solid #fff;
+            position: relative;
+            &::after {
+               content: '';
+               position: absolute;
+               left: 0;
+               bottom: -5px;
+               height: 1px;
+               width: 100%;
+               background-color: rgba(164, 173, 200, 0.5);
+               box-shadow: 1px 1px 1px rgba(89, 109, 72, 0.3);
+            }
+         }
+         & i {
+            font-size: 2rem;
+         }
+      }
+      & tbody {
+         font-size: 1.4rem;
+         tr {
+            border-radius: 5px solid #000;
+         }
+      }
+      & tr {
+         //border-bottom: 1px solid darkgray;
+         height: 5.0rem;
+      }
    }
 
    &__weather {
    }
 
    &__main {
+      display: grid;
+      grid-template-columns: 50px 70px 1fr;
+      //grid-template-rows: 2fr 1fr;
+      margin: 0px 0px 40px 0px;
+      & i {
+         font-size: 4.0rem;
+         color:#0087fb;
+      }
+      gap: 10px;
    }
 
    &__data {
+      display: grid;
+      grid-template: 1fr 1fr / 1fr 1fr;
+      gap: 20px;
    }
 }
 
@@ -558,7 +606,6 @@ body {
       background-image:
         linear-gradient(180deg, transparent 50%, #ccc 50%),
         linear-gradient(90deg, #ccc 50%, transparent 50%);
-
    }
 
    & div:nth-child(5) .card__icon::after {
@@ -633,9 +680,11 @@ body {
 }
 .monthly-rents {
 }
-.card-maintenance {
+.card-maintenance .card__header{
+   margin: 0px 0px 10px 0px;
 }
 .table-header {
+   text-align: left;
 }
 .header {
 
@@ -645,29 +694,51 @@ body {
 .fa-user {
 }
 .priority-card {
+   padding: 3px 10px;
+   border-radius: 3px;
+   box-shadow: 1px 1px 2px rgba(89, 109, 72, 0.3);
+   font-weight: 700;
 }
 .low {
+   background-color: #dcf6df;
+   color: #57cd65;
 }
 .action-details {
+   text-decoration: 1.5px solid underline;
+   text-decoration-color: rgba(85, 84, 233, 0.3);
+   text-underline-offset: 2px;
 }
+
 .medium {
+   background-color: #cfecff;
+   color: #1da2fa;
 }
 .weather {
-
-   &__temperatue {
+   
+   &__temperature {
+      font-size: 4.0rem;
+      color:#0087fb;
    }
 
    &__data {
+      justify-self: center;
    }
 }
 .weekday {
+   color: #000;
+   font-weight: 700;
+   font-size: 1.6rem;
+   margin: 0px 0px 7px 0px;
 }
 .weather-place {
 }
 .subject {
+   grid-column: 1 / 2;
 }
 .data {
 
    &__data {
+      grid-column: 2 / 3;
+      color: #000;
    }
 }

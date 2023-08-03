@@ -306,7 +306,15 @@
          <div class="main__card card-maintenance">
             <div class="card__header">
                <div class="card__title">Open Maintenance Requests</div>
-               <option class="card__option" value="July 2023"></option>
+               <select name="" id="">
+                  <option class="card__option" value="">January 2023</option>
+                  <option class="card__option" value="">February 2023</option>
+                  <option class="card__option" value="">March 2023</option>
+                  <option class="card__option" value="">April 2023</option>
+                  <option class="card__option" value="">May 2023</option>
+                  <option class="card__option" value="">June 2023</option>
+                  <option class="card__option" value="" selected>July 2023</option>
+               </select>
             </div>
             <div class="card__table">
                <table class="table-header">
@@ -321,22 +329,22 @@
                   <tbody>
                      <tr>
                         <td>
-                           <i class="fa-regular fa-user"></i>
+                           <i class="fa-solid fa-house-circle-xmark"></i>
                            <span>House 1</span>
                         </td>
                         <td>
-                           Plumbing - Leaking Faucet
+                           Plumbing - leaking faucet
                         </td>
                         <td>
                            <span class="priority-card low">Low</span>
                         </td>
                         <td>
-                           <a class="action-details">Details</a>
+                           <a href="#" class="action-details">Details</a>
                         </td>
                      </tr>
                      <tr>
                         <td>
-                           <i class="fa-regular fa-user"></i>
+                           <i class="fa-solid fa-house-circle-exclamation"></i>
                            <span>House 3</span>
                         </td>
                         <td>
@@ -346,7 +354,7 @@
                            <span class="priority-card medium">Medium</span>
                         </td>
                         <td>
-                           <a class="action-details">Details</a>
+                           <a href="#" class="action-details">Details</a>
                         </td>
                      </tr>
                   </tbody>
@@ -356,24 +364,29 @@
          <div class="main__card card__weather">
             <div class="card__header">
                <div class="card__title">Weather Report</div>
-               <option class="card__option" value="Today"></option>
+               <select name="" id="">
+                  <option class="card__option" value="" selected>Today</option>
+                  <option class="card__option" value="">Tomorrow</option>
+                  <option class="card__option" value="">Next 3 days</option>
+               </select>
             </div>
             <div class="card__main">
-               <i class=""></i><span class="weather__temperatue"></span>
+               <i class="fa-solid fa-cloud-sun"></i>
+               <span class="weather__temperature">23&#8451;</span>
                <div class="weather__data">
                   <div class="weekday">Saturday</div>
                   <div class="weather-place">Olonets</div>
                </div>
             </div>
             <div class="card__data">
-               <p>
-                  <span class="subject">Wind</span>
-                  <span class="data__data">WNW 17 kmh</span>
-               </p>
-               <p>
-                  <span class="subject">Humidity</span>
-                  <span class="data__data">67%</span>
-               </p>
+
+               <span class="subject">Wind</span>
+               <span class="data__data">WNW 17 kmh</span>
+
+
+               <span class="subject">Humidity</span>
+               <span class="data__data">67%</span>
+
             </div>
          </div>
       </div>
