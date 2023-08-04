@@ -288,6 +288,17 @@ body.active {
   align-items: center;
 }
 
+.total-revenue {
+  height: 268px;
+}
+.total-revenue__chart {
+  width: 100%;
+  height: 80%;
+}
+.total-revenue .card__header {
+  margin: 0px 0px 10px 0px;
+}
+
 .card__number {
   font-size: 3.6rem;
   color: #000;

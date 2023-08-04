@@ -348,6 +348,23 @@ body {
    }
    
 }
+
+.total-revenue {
+   height: 268px;
+   &__chart {
+      width: 100%;
+      height: 80%;
+   }
+   & .card__header {
+      margin: 0px 0px 10px 0px;
+   }
+}
+
+#two-axis-chart {
+   //border: 1px solid #ccc;
+ }
+ 
+
 .card {
 
    &__info {
@@ -440,9 +457,6 @@ body {
          //border-bottom: 1px solid darkgray;
          height: 5.0rem;
       }
-   }
-
-   &__weather {
    }
 
    &__main {

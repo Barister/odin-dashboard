@@ -167,7 +167,7 @@
 
          <div class="main__card total-revenue">
             <div class="card__header">
-               <div class="card__title">Total Revenue</div>
+               <div class="card__title">Total Revenue Last Month</div>
                <div class="card__legend">
                   <ul>
                      <li class="bullet-green">Expenses</li>
@@ -175,7 +175,10 @@
                   </ul>
                </div>
             </div>
-            <div class="diagram__row">
+            <div class="total-revenue__chart">
+               <canvas id="two-axis-chart"></canvas>
+            </div>
+            <!-- <div class="diagram__row">
                <span>$2K</span>
             </div>
             <div class="diagram__row">
@@ -190,7 +193,7 @@
                <span>20</span>
                <span>24</span>
                <span>28</span>
-            </div>
+            </div> -->
          </div>
          <div class="main__card metrics">
             <div class="metrics__header">
@@ -459,7 +462,7 @@
          </div>
       </div>
    </main>
-
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    <script src="js/script.js"></script>
 </body>
 
