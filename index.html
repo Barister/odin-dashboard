@@ -276,12 +276,81 @@
                <div class="card__title">Montly Rents Collected</div>
                <div class="card__legend">
                   <ul>
-                     <li class="bullet-blue">Rent Collected</li>
-                     <li class="bullet-green">Late Rents</li>
+                     <li class="bullet-green">Rent Collected</li>
+                     <li class="bullet-blue">Late Rents</li>
                   </ul>
                </div>
             </div>
-            <div class="diagram__row">
+            <table class="monthly-rents__table">
+               <tbody>
+                  <tr class="montly-rents__month" id="m1">
+                     <th scope="montly-rents__row">March</th>
+                     <td class="monthly-rents__collected bar" style="height: 15%">
+                        <p></p>
+                     </td>
+                     <td class="monthly-rents__late bar" style="height: 7%">
+                        <p></p>
+                     </td>
+                  </tr>
+                  <tr class="montly-rents__month" id="m2">
+                     <th scope="montly-rents__row">April</th>
+                     <td class="monthly-rents__collected bar" style="height: 12%">
+                        <p></p>
+                     </td>
+                     <td class="monthly-rents__late bar" style="height: 12%">
+                        <p></p>
+                     </td>
+                  </tr>
+                  <tr class="montly-rents__month" id="m3">
+                     <th scope="montly-rents__row">May</th>
+                     <td class="monthly-rents__collected bar" style="height: 25%">
+                        <p></p>
+                     </td>
+                     <td class="monthly-rents__late bar" style="height: 20%">
+                        <p></p>
+                     </td>
+                  </tr>
+                  <tr class="montly-rents__month" id="m4">
+                     <th scope="montly-rents__row">June</th>
+                     <td class="monthly-rents__collected bar" style="height: 45%">
+                        <p></p>
+                     </td>
+                     <td class="monthly-rents__late bar" style="height: 25%">
+                        <p></p>
+                     </td>
+                  </tr>
+                  <tr class="montly-rents__month" id="m5">
+                     <th scope="montly-rents__row">July</th>
+                     <td class="monthly-rents__collected bar" style="height: 75%;">
+                        <p></p>
+                     </td>
+                     <td class="monthly-rents__late bar" style="height: 50%">
+                        <p></p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+
+            <div id="ticks">
+               <div class="tick" style="height: 40px;">
+                  <p>$6,000</p>
+               </div>
+               <div class="tick" style="height: 40px;">
+                  <p>$4,500</p>
+               </div>
+               <div class="tick" style="height: 40px;">
+                  <p>$3,000</p>
+               </div>
+               <div class="tick" style="height: 40px;">
+                  <p>$1,500</p>
+               </div>
+               <div class="tick" style="height: 40px;">
+                  <p>$0</p>
+               </div>
+            </div>
+
+
+            <!-- <div class="diagram__row">
                <span>$3K</span>
             </div>
             <div class="diagram__row">
@@ -300,7 +369,7 @@
                <span>May</span>
                <span>June</span>
                <span>July</span>
-            </div>
+            </div> -->
          </div>
          <div class="main__card card-maintenance">
             <div class="card__header">

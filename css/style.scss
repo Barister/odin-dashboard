@@ -465,16 +465,6 @@ body {
 }
 
 
-.fa-solid {
-}
-.fa-person-walking-dashed-line-arrow-right {
-}
-.fa-flip-horizontal {
-}
-.total-revenue {
-}
-
-
 .bullet-green, .bullet-blue {
    position: relative;
    padding: 10px 0px 0px 20px;
@@ -679,8 +669,153 @@ body {
    &__legend {
    }
 }
+
+
 .monthly-rents {
-}
+   // overflow: hidden;
+   max-height: 290px;
+   & .card__header {
+      margin: 0px 0px 20px 0px;
+   }
+   &__table {
+      
+      display: block; /* fixes layout wonkiness in FF1.5 */
+      position: relative; 
+      width: 100%; 
+      height: 100%;
+      //margin: 1.1em 0 0; 
+      padding: 0;
+      background: transparent;
+      font-size: 11px;
+      & tr, th, td {
+         position: absolute;
+         bottom: 0; 
+         width: 20%; 
+         z-index: 2;
+         margin: 0; 
+         padding: 0;
+         text-align: center;
+      }
+      & td {
+         transition: all .3s ease;
+         &:hover {
+            background-color: desaturate(#85144b, 100);
+            opacity: .9;
+            color: white;
+          }
+      }
+      & thead tr {
+         left: 100%; 
+         top: 50%; 
+         bottom: auto;
+         margin: -2.5em 0 0 5em;
+      }
+      & thead th {
+         width: 7.5em; 
+         height: auto; 
+         padding: 0.5em 1em;
+       }
+
+       & thead th.monthly-rents__collected {
+         top: 0; 
+         left: 0; 
+         line-height: 2;
+       }
+       & thead th.monthly-rents__late {
+         top: 0; 
+         left: 0; 
+         line-height: 2;
+       }
+       & tbody th {
+         left: 30%;
+       }
+       & tbody tr {
+         height: 96%;
+         padding-top: 2px;
+         //border-right: 1px dotted #C4C4C4; 
+         color: #AAA;
+         bottom: 27%;
+       }
+       & #m1 {
+         left: 12%;
+       }
+       & #m2 {
+         left: calc((84% - 12%) / 4 + 12%);
+       }
+       & #m3 {
+         left: calc((84% - 12%) / 4 + 30%);
+       }
+       & #m4 {
+         left: calc((84% - 12%) / 4 + 48%);
+       }
+       & #m5 {
+         left: 84%;
+         border-right: none;
+       }
+
+       & tbody th {bottom: -1.75em; vertical-align: top;
+         font-weight: normal; color: #333;
+      }
+
+      & .bar {
+         width: 2.0rem; 
+         border: 1px solid; 
+         border-bottom: none; 
+         color: #000;
+       }
+
+      & .bar p {
+         margin: 5px 0 0; 
+         padding: 0;
+         opacity: .4;
+         z-index: 10;
+         position: relative;
+       }
+
+      & .monthly-rents__collected {
+         left: 20%; 
+         background-color: #57cd65;
+         border-color: transparent;
+      }
+
+      & .monthly-rents__late {
+         left: 50%; 
+         background-color: #5554e9;
+         border-color: transparent;
+      }
+   }
+   
+}   
+
+#ticks {
+   //display: block;
+   position: relative; 
+   bottom: 97%;
+   left: 2px;
+   width: 100%; 
+   height: 100%; 
+   z-index: 1;
+   //margin-bottom: -300px;
+   font-size: 10px;
+   font-family: "fira-sans-2", Verdana, sans-serif;
+ }
+ 
+ #ticks .tick {
+   position: relative; 
+   border-bottom: 1px dotted #C4C4C4; 
+   width: 100%;
+   bottom: 10%;
+ }
+ 
+ #ticks .tick p {
+   position: absolute; 
+   left: 0; 
+   top: 70%; 
+   margin: 0 0 0 0.5em;
+ }
+
+
+
 .card-maintenance .card__header{
    margin: 0px 0px 10px 0px;
 }
@@ -721,6 +856,7 @@ body {
       font-size: 4.0rem;
       color:#0087fb;
       font-family: math, sans-serif;
+      font-weight: 700;
    }
 
    &__data {

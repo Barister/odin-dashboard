@@ -532,6 +532,139 @@ body.active {
   gap: 10px;
 }
 
+.monthly-rents {
+  max-height: 290px;
+}
+.monthly-rents .card__header {
+  margin: 0px 0px 20px 0px;
+}
+.monthly-rents__table {
+  display: block; /* fixes layout wonkiness in FF1.5 */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  font-size: 11px;
+}
+.monthly-rents__table tr, .monthly-rents__table th, .monthly-rents__table td {
+  position: absolute;
+  bottom: 0;
+  width: 20%;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.monthly-rents__table td {
+  transition: all 0.3s ease;
+}
+.monthly-rents__table td:hover {
+  background-color: #4d4d4d;
+  opacity: 0.9;
+  color: white;
+}
+.monthly-rents__table thead tr {
+  left: 100%;
+  top: 50%;
+  bottom: auto;
+  margin: -2.5em 0 0 5em;
+}
+.monthly-rents__table thead th {
+  width: 7.5em;
+  height: auto;
+  padding: 0.5em 1em;
+}
+.monthly-rents__table thead th.monthly-rents__collected {
+  top: 0;
+  left: 0;
+  line-height: 2;
+}
+.monthly-rents__table thead th.monthly-rents__late {
+  top: 0;
+  left: 0;
+  line-height: 2;
+}
+.monthly-rents__table tbody th {
+  left: 30%;
+}
+.monthly-rents__table tbody tr {
+  height: 96%;
+  padding-top: 2px;
+  color: #AAA;
+  bottom: 27%;
+}
+.monthly-rents__table #m1 {
+  left: 12%;
+}
+.monthly-rents__table #m2 {
+  left: 30%;
+}
+.monthly-rents__table #m3 {
+  left: 48%;
+}
+.monthly-rents__table #m4 {
+  left: 66%;
+}
+.monthly-rents__table #m5 {
+  left: 84%;
+  border-right: none;
+}
+.monthly-rents__table tbody th {
+  bottom: -1.75em;
+  vertical-align: top;
+  font-weight: normal;
+  color: #333;
+}
+.monthly-rents__table .bar {
+  width: 2rem;
+  border: 1px solid;
+  border-bottom: none;
+  color: #000;
+}
+.monthly-rents__table .bar p {
+  margin: 5px 0 0;
+  padding: 0;
+  opacity: 0.4;
+  z-index: 10;
+  position: relative;
+}
+.monthly-rents__table .monthly-rents__collected {
+  left: 20%;
+  background-color: #57cd65;
+  border-color: transparent;
+}
+.monthly-rents__table .monthly-rents__late {
+  left: 50%;
+  background-color: #5554e9;
+  border-color: transparent;
+}
+
+#ticks {
+  position: relative;
+  bottom: 97%;
+  left: 2px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  font-size: 10px;
+  font-family: "fira-sans-2", Verdana, sans-serif;
+}
+
+#ticks .tick {
+  position: relative;
+  border-bottom: 1px dotted #C4C4C4;
+  width: 100%;
+  bottom: 10%;
+}
+
+#ticks .tick p {
+  position: absolute;
+  left: 0;
+  top: 70%;
+  margin: 0 0 0 0.5em;
+}
+
 .card-maintenance .card__header {
   margin: 0px 0px 10px 0px;
 }
@@ -569,6 +702,7 @@ body.active {
   font-size: 4rem;
   color: #0087fb;
   font-family: math, sans-serif;
+  font-weight: 700;
 }
 .weather__data {
   justify-self: center;
