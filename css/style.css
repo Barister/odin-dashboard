@@ -332,7 +332,8 @@ body.active {
 }
 
 .total-revenue {
-  height: 268px;
+  height: max(-moz-min-content, 268px);
+  height: max(min-content, 268px);
 }
 .total-revenue__chart {
   width: 100%;

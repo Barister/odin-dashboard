@@ -354,7 +354,7 @@ body {
 }
 
 .total-revenue {
-   height: 268px;
+   height: max(min-content, 268px);
    &__chart {
       width: 100%;
       height: 80%;
