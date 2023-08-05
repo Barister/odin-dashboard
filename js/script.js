@@ -1,17 +1,37 @@
-//burger activation click
 
 const burger = document.querySelector('.burger-menu');
 const asidePanel = document.querySelector('.aside');
 const logoMobile = document.querySelector('.aside__logoMobile');
 const body = document.querySelector('body');
 
-burger.addEventListener('click', () => {
+function toggleActiveClass() {
    burger.classList.toggle('active');
    asidePanel.classList.toggle('active');
    logoMobile.classList.toggle('active');
    body.classList.toggle('active');
-});
-//console.log(asidePanel);p
+}
+
+function addActiveClass() {
+   burger.classList.add('active');
+   asidePanel.classList.add('active');
+   logoMobile.classList.add('active');
+   body.classList.add('active');
+}
+
+//burger activation click
+burger.addEventListener('click', toggleActiveClass);
+
+//burger activation if screen width < 606px;
+
+function checkWindowWidth() {
+   if (window.innerWidth < 607) {
+      addActiveClass();
+      window.removeEventListener('resize', checkWindowWidth);
+   }
+}
+
+window.addEventListener('DOMContentLoaded', checkWindowWidth);
+window.addEventListener('resize', checkWindowWidth);
 
 
 //today date
@@ -107,7 +127,4 @@ document.addEventListener("DOMContentLoaded", function () {
       },
    });
 
-   // // Скрыть легенду
-   // twoAxisChart.options.legend.display = false;
-   // twoAxisChart.update();
 });
