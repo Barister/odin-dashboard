@@ -51,6 +51,7 @@ body {
 .header {
    position: fixed;
    width: 100%;
+   
    grid-area: header;
    background-color: #fff;
    display: grid;
@@ -58,9 +59,13 @@ body {
    align-items: center;
    padding: 10px 0;
    z-index: 10;
+   @media (max-width: 500px) {
+      grid-template-columns: 160px 4fr minmax(70px, 1fr);
+   }
    &__menu {
       padding: 0 20px;
       align-self: center;
+      
    }
 
    &__list {
@@ -96,11 +101,14 @@ body {
       justify-self: start;
       width: 100%;
       padding-left: 20px;
+      @media (max-width: 500px) {
+         padding-left: 0px;
+      }
       & label {
          width: 100%;
       }
       & input {
-         width: 89%;
+         width: 85%;
          border: none;
          color: #a4adc8;
          font-size: 1.4rem;
@@ -119,6 +127,11 @@ body {
       font-size: 1.4rem;
       justify-self: end;
       padding: 0 20px 0 0;
+      & span {
+         @media (max-width: 500px) {
+            display: none;
+         }
+      }
    }
 }
 
@@ -277,7 +290,9 @@ body {
    font-size: 1.4rem;
    //height: calc(100vh - 38px);
    width: min(1200px, 100%);
-   
+   @media (max-width: 500px) {
+      padding: 20px 0px 20px 10px;
+   }
    &__header {
       display: flex;
       justify-content: space-between;
@@ -305,7 +320,9 @@ body {
       grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
       grid-template-rows: repeat(auto-fit, minmax(10%, 1fr));
       gap: 10px;
-      
+      @media (max-width: 500px) {
+         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      }
    }
 
    &__summary {
