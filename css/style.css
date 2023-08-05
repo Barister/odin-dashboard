@@ -27,10 +27,12 @@ a {
 }
 
 body {
+  min-width: -moz-min-content;
+  min-width: min-content;
   width: 100%;
   background-color: #f5f7fd;
   font-size: 1.6rem;
-  color: #a4adc8;
+  color: #a1accf;
   display: grid;
   grid-template-columns: 175px 6fr;
   grid-template-rows: minmax(min-content, 40px) 1fr;
@@ -146,7 +148,9 @@ body.active {
   padding: 20px 20px 20px 20px;
   z-index: 10;
   display: grid;
-  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: min-content 1fr auto;
+  max-width: 175px;
+  overflow-x: hidden;
 }
 .aside.active {
   text-align: center;
@@ -204,7 +208,13 @@ body.active {
 }
 .aside__menu {
   display: grid;
-  grid-template-rows: repeat(auto-fill, 20px);
+  grid-template-rows: repeat(auto-fit, minmax(20px, max-content));
+  height: -moz-min-content;
+  height: min-content;
+  gap: 10px;
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  overflow-x: hidden;
 }
 .aside__item.active, .aside__item:hover, .aside__support:hover {
   color: #0f1b41;
@@ -701,7 +711,6 @@ body.active {
           text-decoration: 1px solid underline;
   text-decoration-color: rgba(85, 84, 233, 0.3);
   text-underline-offset: 2px;
-  box-shadow: 1px 1px 0 0 rgba(85, 84, 233, 0.1);
 }
 
 .medium {

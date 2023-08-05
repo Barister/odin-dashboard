@@ -30,10 +30,11 @@ a {
 
 body {
    // height: 100vh;
+   min-width: min-content;
    width: 100%;
    background-color: #f5f7fd;
    font-size: 1.6rem;
-   color: #a4adc8;
+   color: #a1accf;
    display: grid;
    grid-template-columns: 175px 6fr;
    grid-template-rows: minmax(min-content, 40px) 1fr;
@@ -164,9 +165,13 @@ body {
    padding: 20px 20px 20px 20px;
    z-index: 10;
    display: grid;
-   //gap: 10px;
-   grid-template-rows: min-content 1fr min-content;
+   //gap: 20px;
+   grid-template-rows: min-content 1fr auto;
    //position: relative;
+   max-width: 175px;
+   // overflow: hidden;
+   //overflow-y: auto;
+   overflow-x: hidden;
    &.active {
       text-align: center;
       padding: 20px 10px 20px 10px;
@@ -205,6 +210,7 @@ body {
          width: fit-content;
          margin: 0 auto;
          letter-spacing: 3px;
+         
          &:nth-of-type(2){
             width: fit-content;
             border-top: 2px solid #fff;
@@ -228,10 +234,14 @@ body {
 
    &__menu {
       display: grid;
-      grid-template-rows: repeat(auto-fill, 20px);
+      grid-template-rows: repeat(auto-fit, minmax(20px, max-content));
+      height: min-content;
       // justify-content: start;
-      // gap: 20px;
+      gap: 10px;
       // position: relative;
+      width: 100%;
+      margin: 0px 0px 20px 0px;
+      overflow-x: hidden;
    }
    &__item.active, &__item:hover, &__support:hover {
       color: #0f1b41;
@@ -250,7 +260,7 @@ body {
       & span{
          // position: absolute;
          // margin-left: 20px;
-      
+         //white-space: wrap;
    }
    }
 
@@ -857,7 +867,7 @@ body {
    text-decoration: 1px solid underline;
    text-decoration-color: rgba(85, 84, 233, 0.3);
    text-underline-offset: 2px;
-   box-shadow: 1px 1px 0 0 rgba(85, 84, 233, 0.1);
+   //box-shadow: 1px 1px 0 0 rgba(85, 84, 233, 0.1);
 }
 
 .medium {
