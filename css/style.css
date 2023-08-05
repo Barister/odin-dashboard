@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Norse Bold";
   src: url("../fonts/Norse-Bold.otf") format("opentype");
@@ -32,7 +31,7 @@ body {
   min-width: -moz-min-content;
   min-width: min-content;
   width: 100%;
-  background-color: #f5f7fd;
+  background-color: #f3f5f6;
   font-size: 1.6rem;
   color: #a1accf;
   display: grid;
@@ -142,13 +141,12 @@ body.active {
 
 .bar {
   width: 100%;
-  height: 2px; /* Высота полоски меню бургер */
-  background-color: #a4adc8; /* Цвет полоски меню бургер */
-  border-radius: 2px; /* Делаем закругленные уголки у полосок */
+  height: 2px;
+  background-color: #a4adc8;
+  border-radius: 2px;
   transition: transform 0.3s ease;
 }
 
-/* Добавляем анимацию на полоски меню бургер при клике */
 .burger-menu.active .bar:nth-child(1) {
   width: 70%;
 }
@@ -243,6 +241,7 @@ body.active {
   display: grid;
   grid-template-columns: 30px 1fr;
 }
+
 .main {
   grid-area: main;
   padding: 20px;
@@ -285,7 +284,7 @@ body.active {
 }
 @media (max-width: 500px) {
   .main__grid {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   }
 }
 .main__summary {
@@ -319,6 +318,11 @@ body.active {
   background-color: #fff;
   width: 100%;
   padding: 20px 30px;
+}
+@media (max-width: 500px) {
+  .main__card {
+    padding: 20px 15px;
+  }
 }
 
 .summary__card {
@@ -592,7 +596,7 @@ body.active {
   margin: 0px 0px 20px 0px;
 }
 .monthly-rents__table {
-  display: block; /* fixes layout wonkiness in FF1.5 */
+  display: block;
   position: relative;
   width: 100%;
   height: 100%;

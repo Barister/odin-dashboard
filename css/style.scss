@@ -21,7 +21,6 @@ html {
 button, input, select {
    font-family: inherit;
    font-size: 100%;
-   //appearance: none;
    color: inherit;
 }
 
@@ -31,10 +30,9 @@ a {
 }
 
 body {
-   // height: 100vh;
    min-width: min-content;
    width: 100%;
-   background-color: #f5f7fd;
+   background-color: #f3f5f6;
    font-size: 1.6rem;
    color: #a1accf;
    display: grid;
@@ -53,7 +51,6 @@ body {
 .header {
    position: fixed;
    width: 100%;
-   
    grid-area: header;
    background-color: #fff;
    display: grid;
@@ -151,25 +148,21 @@ body {
 
 .bar {
    width: 100%;
-   height: 2px; /* Высота полоски меню бургер */
-   background-color: #a4adc8; /* Цвет полоски меню бургер */
-   border-radius: 2px; /* Делаем закругленные уголки у полосок */
+   height: 2px; 
+   background-color: #a4adc8; 
+   border-radius: 2px; 
    transition: transform 0.3s ease;
  }
  
- /* Добавляем анимацию на полоски меню бургер при клике */
+
  .burger-menu.active .bar:nth-child(1) {
    width: 70%;
-   //transform: translateY(8px) rotate(45deg);
- }
- 
- .burger-menu.active .bar:nth-child(2) {
-   // opacity: 0;
+   
  }
  
  .burger-menu.active .bar:nth-child(3) {
    width: 70%;
-   //transform: translateY(-8px) rotate(-45deg);
+   
  }
 
 .aside {
@@ -180,12 +173,8 @@ body {
    padding: 20px 20px 20px 20px;
    z-index: 10;
    display: grid;
-   //gap: 20px;
    grid-template-rows: min-content 1fr auto;
-   //position: relative;
    max-width: 175px;
-   // overflow: hidden;
-   //overflow-y: auto;
    overflow-x: hidden;
    &.active {
       text-align: center;
@@ -197,11 +186,8 @@ body {
    &__logo {
       height: 100px;
       width: 100%;
-      //padding: 20px 0px 20px 0px;
       font-family: 'Norse Bold', sans-serif;
       text-align: center;
-      //position: relative;
-      
       &::after {
          padding: 0;
          background-color: rgb(1, 1, 1);
@@ -267,22 +253,10 @@ body {
    &__item a{
       display: grid;
       grid-template-columns: 30px 1fr;
-      // position: relative
-      & i {
-
-         // position: absolute;
-      }
-      & span{
-         // position: absolute;
-         // margin-left: 20px;
-         //white-space: wrap;
-   }
+      
+           
    }
 
-   
-
-   &__support {
-   }
 }
 
 
@@ -290,7 +264,6 @@ body {
    grid-area: main;
    padding: 20px;
    font-size: 1.4rem;
-   //height: calc(100vh - 38px);
    width: min(1200px, 100%);
    position: relative;
    z-index: 9;
@@ -325,7 +298,7 @@ body {
       grid-template-rows: repeat(auto-fit, minmax(10%, 1fr));
       gap: 10px;
       @media (max-width: 500px) {
-         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+         grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
       }
    }
 
@@ -358,17 +331,17 @@ body {
    }
 
    &__card {
-      //border: 1px solid #00abda;
+      
       border-radius: 10px;
       background-color: #fff;
       width: 100%;
       padding: 20px 30px;
+      @media (max-width: 500px) {
+         padding: 20px 15px;
+      }
    }
 }
-.fa-regular {
-}
-.fa-sun {
-}
+
 .summary {
 
    &__card {
@@ -391,23 +364,12 @@ body {
    }
 }
 
-#two-axis-chart {
-   //border: 1px solid #ccc;
- }
- 
-
 .card {
-
-   &__info {
-   }
 
    &__number {
       font-size: 3.6rem;
       color: #000;
       font-weight: 700;
-   }
-
-   &__title {
    }
 
    &__icon {
@@ -450,9 +412,6 @@ body {
       top: -10px;
    }
 
-   &__option {
-   }
-
    &__table {
       overflow-x: auto;
       & table {
@@ -486,7 +445,6 @@ body {
          }
       }
       & tr {
-         //border-bottom: 1px solid darkgray;
          height: 5.0rem;
       }
    }
@@ -494,7 +452,6 @@ body {
    &__main {
       display: grid;
       grid-template-columns: 50px 70px 1fr;
-      //grid-template-rows: 2fr 1fr;
       margin: 0px 0px 40px 0px;
       & i {
          font-size: 4.0rem;
@@ -529,11 +486,7 @@ body {
    background-color: #4d2cee;
    
 }
-.diagram {
 
-   &__row {
-   }
-}
 .metrics {
    display: grid;
    grid-template-columns: 1fr 1fr;
@@ -564,11 +517,9 @@ body {
       align-items: baseline;
    }
 
-   &__info {
-   }
+   
 
    &__diag i {
-      //border: 3px solid #e4ebee;
       position: relative;
       z-index: 2;
    }
@@ -707,29 +658,21 @@ body {
       gap: 10px;
    }
 }
-.info {
 
-   &__block {
-   }
-
-   &__legend {
-   }
-}
 
 
 .monthly-rents {
-   // overflow: hidden;
+   
    max-height: 290px;
    & .card__header {
       margin: 0px 0px 20px 0px;
    }
    &__table {
       
-      display: block; /* fixes layout wonkiness in FF1.5 */
+      display: block; 
       position: relative; 
       width: 100%; 
       height: 100%;
-      //margin: 1.1em 0 0; 
       padding: 0;
       background: transparent;
       font-size: 11px;
@@ -834,14 +777,14 @@ body {
 }   
 
 #ticks {
-   //display: block;
+   
    position: relative; 
    bottom: 97%;
    left: 2px;
    width: 100%; 
    height: 100%; 
    z-index: 1;
-   //margin-bottom: -300px;
+  
    font-size: 10px;
    font-family: "fira-sans-2", Verdana, sans-serif;
  }
@@ -868,13 +811,7 @@ body {
 .table-header {
    text-align: left;
 }
-.header {
 
-   &__item {
-   }
-}
-.fa-user {
-}
 .priority-card {
    padding: 3px 10px;
    border-radius: 3px;
@@ -889,7 +826,7 @@ body {
    text-decoration: 1px solid underline;
    text-decoration-color: rgba(85, 84, 233, 0.3);
    text-underline-offset: 2px;
-   //box-shadow: 1px 1px 0 0 rgba(85, 84, 233, 0.1);
+   
 }
 
 .medium {
@@ -915,8 +852,7 @@ body {
    font-size: 1.6rem;
    margin: 0px 0px 7px 0px;
 }
-.weather-place {
-}
+
 .subject {
    grid-column: 1 / 2;
 }
