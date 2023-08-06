@@ -246,7 +246,7 @@ body.active {
   grid-area: main;
   padding: 20px;
   font-size: 1.4rem;
-  width: min(1200px, 100%);
+  width: min(1265px, 100%);
   position: relative;
   z-index: 9;
 }
@@ -278,7 +278,7 @@ body.active {
 }
 .main__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(10%, 1fr));
   gap: 10px;
 }
